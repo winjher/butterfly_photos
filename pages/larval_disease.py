@@ -128,12 +128,12 @@ import tensorflow as tf
 import numpy as np
 
 st.sidebar.header('Larval Diseases Classification CNN Model')
-larval_disease_names = ['Disease-Larvae_Common_Lime',
- 'Disease-Larvae_Golden_Birdwing',
- 'Healthy-Larvae_Common_Lime',
- 'Healthy-Larvae_Golden_Birdwing',
- 'Tachinid fly']
-
+larval_disease_names = ['Baculovirus',
+                        'Gnats Disease',
+                        'Healthy-Larvae_Common_Lime',
+                        'Healthy-Larvae_Golden_Birdwing',
+                        'Tachinid fly']
+ 
 model = load_model('Larval_Recog_Model.h5')
 st.sidebar.success("Model loaded successfully.")
 

@@ -9,7 +9,7 @@ import numpy as np
 
 
 st.header('Life Stages Classification CNN Model')
-pupae_defects_names = ['Butterfly', 'Eggs', 'Larvae', 'Pupae']
+life_stages = ['Butterfly', 'Eggs', 'Larvae', 'Pupae']
 
 
 
@@ -30,7 +30,7 @@ def classify_images(image_path):
 
     predictions = model.predict(input_image_exp_dim)
     result = tf.nn.softmax(predictions[0])
-    outcome = 'The Image belongs to ' + pupae_defects_names[np.argmax(result)] + ' with a score of '+ str(np.max(result)*100)
+    outcome = 'The Image belongs to ' + life_stages[np.argmax(result)] + ' with a score of '+ str(np.max(result)*100)
     return outcome
 
 

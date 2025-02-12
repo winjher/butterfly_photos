@@ -9,7 +9,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Set up Streamlit interface
-st.header('Butterfly Classification CNN Model')
+st.header('Butterfly and its host plants')
 
 butterfly_names = ['Butterfly-Clippers',
  'Butterfly-Common Jay',
@@ -55,7 +55,7 @@ if uploaded_file is not None:
     st.markdown(outcome)
 
     if st.sidebar.button('Show Hostplants'):
-        treatment_info = {
+        hostplants_info = {
             0: "Wild Cucumber.",
             1: "'Avocado Tree', 'Soursop', 'Sugar Apple', 'Amuyon', 'Indian Tree'.",
             2: "'Limeberry', 'Calamondin', 'Pomelo', 'Sweet Orange', 'Calamansi'.",
@@ -75,7 +75,7 @@ if uploaded_file is not None:
             16:"'Gmelina Tree', 'Soursop'",
             17:"'Curry Leafs'"
         }
-        st.markdown(treatment_info[label])
+        st.markdown(hostplants_info[label])
 
 # Function to evaluate model on validation data
 def evaluate_model():

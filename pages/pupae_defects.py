@@ -70,8 +70,6 @@ st.sidebar.header('Pupae Defects Classification CNN Model')
 pupae_defects_names = [
     'Ant bites',
     'Deformed body',
-    'Golden Birdwing defects pupae',
-    'Golden Birdwing healthy pupae',
     'Healthy Pupae',
     'Old Pupa',
     'Overbend',
@@ -105,13 +103,11 @@ if uploaded_file is not None:
     if st.sidebar.button('Show Buyers Perspective'):
         treatment_info = {
             0: "Ant bites is reject and might no good for export.",
-            1: "Deformed body is reject and might no good for export.",
-            2: "Treatment for Golden Birdwing defects pupae.",
-            3: "Golden Birdwing healthy pupae is in good quality and is for sale",
-            4: "Healthy Pupae is in good quality and is for sale.",
-            5: "Old Pupa is not for sale for buyers.",
-            6: "Overbend is reject and might no good for export",
-            7: "Stretch abdomen is reject and might no good for export."
+            1: "Deformed body is reject and might no good for export.", 
+            2: "Healthy Pupae is in good quality and is for sale.",
+            3: "Old Pupa is not for sale for buyers.",
+            4: "Overbend is reject and might no good for export",
+            5: "Stretch abdomen is reject and might no good for export."
         }
         st.markdown(treatment_info[label])
 

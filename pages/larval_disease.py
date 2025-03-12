@@ -126,15 +126,14 @@ from keras.models import load_model
 import streamlit as st
 import tensorflow as tf
 import numpy as np
+import streamlit.components.v1 as components
 
-st.sidebar.header('Larval Diseases Classification CNN Model')
-larval_disease_names = ['Baculovirus',
+st.sidebar.header('Diseases Classification CNN Model')
+larval_disease_names = ['Anaphylaxis Infection',
                         'Gnats Disease',
-                        'Healthy-Larvae_Common_Lime',
-                        'Healthy-Larvae_Golden_Birdwing',
-                        'Tachinid fly']
+                        'Tachinid Disease']
  
-model = load_model('Larval_Recog_Model.h5')
+model = load_model('./model/Larval_Recog_Model.h5')
 st.sidebar.success("Model loaded successfully.")
 
 def classify_images(image_path):
@@ -158,29 +157,32 @@ if uploaded_file is not None:
 
     if st.sidebar.button('Show Treatment'):
         treatment_info = {
-            0: "Treatment for Disease-Larvae_Common_Lime is to provide a net to secure the larvae from injection of fruit flies, gnats and parasites.",
-            1: "Treatment for Disease-Larvae_Golden_Birdwing is to keep away from the ants where they live.",
-            2: "No treatment needed, Healthy-Larvae_Common_Lime.",
-            3: "No treatment needed, Healthy-Larvae_Golden_Birdwing.",
-            4: "Treatment for Tachinid fly removed the larvae who have injected by the tachinid flies."
+            0: "Treatment for Anaphylaxis Infection is to provide a net to secure the larvae from injection of fruit flies, gnats and parasites.",
+            1: "Treatment for Gnats Disease is to keep away from the ants where they live.",
+            2: "Treatment for Tachinid diseases removed the larvae who have injected by the tachinid flies."
         }
         st.markdown(treatment_info[label])
 
+# Define your HTML code
 html_code = """
-# <!DOCTYPE html>
-# <html>
-# <head>
-#     <title>Larval Disease Prediction</title>
-#     <script type="text/javascript">
-#         function showAlert() {
-#             alert("This is a JavaScript alert!");
-#         }
-#     </script>
-# </head>
-# <body>
-#     <button onclick="showAlert()">Click Me!</button>
-# </body>
-# </html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Larval Disease Prediction</title>
+    <script type="text/javascript">
+        function showAlert() {
+            alert("This is a JavaScript alert!");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="showAlert()">Click Me!</button>
+</body>
+</html>
 """
 
+# Use Streamlit to display the HTML
+st.title("Larval Disease Prediction App")
+
+# Embedding the HTML code
 # st.components.v1.html(html_code, height=200)
